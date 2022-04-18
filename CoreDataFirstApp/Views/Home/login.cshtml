@@ -1,0 +1,25 @@
+﻿@{ ViewData["Title"] = "Privacy Policy"; }
+@model CoreDataFirstApp.Models.userlogin
+   
+    <form role="form" asp-controller="Home" asp-action="login" method="post">
+
+        <div style="background-color:#66e1e5">
+
+
+            <h4>@TempData["Invalid"]</h4>
+            <h4>@ViewBag.Inv</h4>
+            <div class="form-group col-lg-5">
+                <label>username</label>
+                <input placeholder="username" class="form-control badge-success" asp-for="username" type"text" />
+                <span asp-validation-for="username" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-lg-5">
+                <label>password</label>
+                <input placeholder="password" type="password" class="form-control badge-info" asp-for="password" type"text" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <input class="btn btn-success" value="submit" type="submit" />
+        </div>
+    </form>
+   

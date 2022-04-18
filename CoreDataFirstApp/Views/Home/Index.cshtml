@@ -1,0 +1,40 @@
+﻿@model List<CoreDataFirstApp.Models.EmpModel>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Sid</th>
+        <th>Sname</th>
+        <th>Smail</th>
+        <th>Smob</th>
+        <th>City</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+   {
+       <tr>
+           <td>@item.Sid</td>
+           <td>@item.Sname</td>
+           <td>@item.Smail</td>
+           <td>@item.Smob</td>
+           <td>@item.City</td>
+
+      
+           <td><a class="btn btn-danger" asp-controller="Home" asp-action="Edit" asp-route-Sid="@item.Sid">Edit</a> </td>
+           
+           <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-Sid="@item.Sid">Delete</a> </td>
+       </tr>
+       
+   }
+
+</table>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
